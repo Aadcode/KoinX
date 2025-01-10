@@ -3,7 +3,7 @@ import dotenv from "dotenv";
 import fetchAndUpdateDatabase from "./utils/updatesdatabase.js";
 import connectDB from "./db/db.js";
 import cron from "node-cron";
-
+import statsRoutes from "./routes/stats.routes.js";
 dotenv.config();
 const app = express();
 
@@ -15,7 +15,7 @@ cron.schedule("0 */2 * * *", () => {
 });
 
 app.use("/api/v1", statsRoutes);
-app.use("/api/v1", deviationRoutes);
+//app.use("/api/v1", deviationRoutes);
 
 app.listen(process.env.PORT, () => {
   console.log(`Listening at ${process.env.PORT}`);

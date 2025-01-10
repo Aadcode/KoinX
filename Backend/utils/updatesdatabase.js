@@ -7,7 +7,7 @@ const fetchAndUpdateDatabase = async () => {
     method: "get",
     headers: {
       accept: "application/json",
-      "x-cg-demo-api-key": "CG-x6Ww3SaoUHTnZERSfUqPBSfM",
+      "x-cg-demo-api-key": `${process.env.API_KEY}`,
     },
     params: {
       ids: "bitcoin,matic-network,ethereum",
@@ -24,11 +24,12 @@ const fetchAndUpdateDatabase = async () => {
       usd_24h_Change: values.usd_24h_change,
     })
   );
+  console.log(transformedData);
   try {
     await coinData.insertMany(transformedData);
-    console.log("Data saved successfully!");
+    return transformedData;
   } catch (error) {
-    console.error("Error saving data:", error);
+    console.error("Error saving data:", error.message);
   }
 };
 
