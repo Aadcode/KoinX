@@ -7,9 +7,16 @@ const connectDB = async () => {
       `${process.env.DATABASE_URL}/${DB_NAME}`
     );
 
-    console.log(connectionInstance.connection.host);
+    console.log(
+      `MongoDB connected on host: ${connectionInstance.connection.host}`
+    );
+
+    mongoose.connection.on("disconnected", () => {
+      console.log("MongoDB disconnected");
+    });
   } catch (error) {
-    console.log("Database COnnection Failed", error.message);
+    console.log("Database Connection Failed", error.message);
+    throw error;
   }
 };
 export default connectDB;

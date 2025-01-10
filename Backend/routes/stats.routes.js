@@ -3,6 +3,6 @@ import latestData from "../controllers/stats.controller.js";
 
 const router = Router();
 
-router.get("/stats", latestData);
+router.route("/stats").get(latestData);
 
 export default router;

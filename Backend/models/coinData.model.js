@@ -24,6 +24,6 @@ const coinDataSchema = new mongoose.Schema(
   }
 );
 
-const CoinData = mongoose.model("CoinData", coinDataSchema);
+const CoinDataModel = mongoose.model("CoinData", coinDataSchema);
 
-export default CoinData;
+export default CoinDataModel;
