@@ -3,6 +3,13 @@
 ## Overview
 This is a Node.js application that tracks cryptocurrency prices using the CoinGecko API. It features automated price updates and provides REST endpoints for accessing cryptocurrency statistics.
 
+## Live API
+Base URL: https://koinx-bz4u.onrender.com
+
+Test the endpoints:
+- Get Stats: https://koinx-bz4u.onrender.com/api/v1/stats?coin=bitcoin
+- Get Deviation: https://koinx-bz4u.onrender.com/api/v1/deviation?coin=bitcoin
+
 ## Features
 - Background job to fetch crypto prices every 2 hours
 - REST API endpoints for cryptocurrency statistics
@@ -23,7 +30,6 @@ This is a Node.js application that tracks cryptocurrency prices using the CoinGe
 - npm 
 
 ## Installation
-
 1. Clone the repository
 ```bash
 git clone https://github.com/Aadcode/KoinX.git
@@ -53,7 +59,6 @@ npm run dev
 ```
 
 ## API Endpoints
-
 ### Get Cryptocurrency Stats
 ```
 GET /api/v1/stats?coin=bitcoin
@@ -101,7 +106,6 @@ The application runs a scheduled job every 2 hours to fetch and store the latest
 
 ## Database Schema
 The application uses MongoDB with the following schema for cryptocurrency data:
-
 ```javascript
 {
     id: String,
@@ -124,4 +128,3 @@ The application uses MongoDB with the following schema for cryptocurrency data:
 
 ## Author
 [ Aadarsh Jain ]
-
